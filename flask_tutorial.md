@@ -517,7 +517,8 @@ pip install flask-sqlalchemy
 <!DOCTYPE html>
 <html>
     <head>
-    <title>{% raw %}
+    <title>
+        {% raw %}
         {% block content %}{% endblock %}
         {% endraw %}
     </title>
@@ -525,8 +526,10 @@ pip install flask-sqlalchemy
     <body>
         <h1>WEBSITE</h1>
         <div class ="container-fluid">
+            {% raw %}
             {% block content %}
             {% endblock %}
+            {% endraw %}
         </div>
     </body>
 </html>
