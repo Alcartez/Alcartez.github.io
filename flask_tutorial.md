@@ -206,8 +206,8 @@ This will print the values the values in the list
             {% else %}
                 <h3>{{x}}</h3>
             {% endif %}
+        {% endfor %} 
         {% endraw %}
-        {% endfor %}       
     </body>
 </html>
 ```
