@@ -197,6 +197,7 @@ This will print the values the values in the list
     </head>
     <body>
         <h1>Home Page</h1>
+        {% raw %}
         {% for x in list%}
             {% if x == "3" %}
                 <h1>THREE</h1>
@@ -205,7 +206,7 @@ This will print the values the values in the list
             {% else %}
                 <h3>{{x}}</h3>
             {% endif %}
-
+        {% endraw %}
         {% endfor %}       
     </body>
 </html>
