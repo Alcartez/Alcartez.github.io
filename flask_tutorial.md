@@ -807,8 +807,10 @@ Note : Bootstrap link is to be above the css link.
         <link rel="stylesheet" type = "text/css" href="{{url_for('static', filename='style.css')}}">
     </head>
     <body>
+        {% raw %}
         {% block content %}
         {% endblock %}
+        {% endraw %}
     </body>
 </html>
 ```
