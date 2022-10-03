@@ -231,11 +231,7 @@ out an uniform sense of page.
 <!DOCTYPE html>
 <html>
     <head>
-    <title>
-        {% raw %}
-        {% block content %}{% endblock %}
-        {% endraw %}
-    </title>
+    <title>{% raw %}{% block content %}{% endblock %}{% endraw %}</title>
     </head>
     <body>
         <h1>WEBSITE</h1>
@@ -352,7 +348,7 @@ if __name__ == "__main__":
     <p><input type="submit" value = "SUBMIT">
 </form>
 {% endblock %}
-{% raw %}
+{% endraw %}
 ```
 
 
@@ -428,7 +424,7 @@ if __name__ == "__main__":
     <p><input type="submit" value = "SUBMIT">
 </form>
 {% endblock %}
-{% raw %}
+{% endraw %}
 ```
 
 #### user.html 
@@ -448,7 +444,7 @@ if __name__ == "__main__":
     {% endwith %}
 <h1>Welcome {{user}}</h1>
 {% endblock %}
-{% raw %}
+{% endraw %}
 ```
 
 
@@ -517,11 +513,7 @@ pip install flask-sqlalchemy
 <!DOCTYPE html>
 <html>
     <head>
-    <title>
-        {% raw %}
-        {% block content %}{% endblock %}
-        {% endraw %}
-    </title>
+    <title>{% raw %}{% block content %}{% endblock %}{% endraw %}</title>
     </head>
     <body>
         <h1>WEBSITE</h1>
