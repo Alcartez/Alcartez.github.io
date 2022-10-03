@@ -517,7 +517,10 @@ pip install flask-sqlalchemy
 <!DOCTYPE html>
 <html>
     <head>
-    <title>{% raw %}{% block content %}{% endblock %}{% endraw %}</title>
+    <title>{% raw %}
+        {% block content %}{% endblock %}
+        {% endraw %}
+    </title>
     </head>
     <body>
         <h1>WEBSITE</h1>
