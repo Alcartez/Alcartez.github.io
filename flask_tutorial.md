@@ -1,3 +1,7 @@
+---
+title:  "FLASK TUTORIAL"
+---
+
 # Flask Tutorial
 
 ### Basic Flask App
@@ -289,6 +293,7 @@ if __name__ == "__main__":
 #### login.html 
 
 ```html
+{% raw %}
 {% extends "base.html" %}
 {% block title %}Login Page{% endblock %}
 
@@ -299,6 +304,7 @@ if __name__ == "__main__":
     <p><input type="submit" value = "SUBMIT">
 </form>
 {% endblock %}
+{% endraw %}
 ```
 
 
@@ -335,6 +341,7 @@ if __name__ == "__main__":
 #### login.html 
 
 ```html
+{% raw %}
 {% extends "base.html" %}
 {% block title %}Login Page{% endblock %}
 
@@ -345,6 +352,7 @@ if __name__ == "__main__":
     <p><input type="submit" value = "SUBMIT">
 </form>
 {% endblock %}
+{% raw %}
 ```
 
 
@@ -401,6 +409,7 @@ if __name__ == "__main__":
 #### login.html 
 
 ```html
+{% raw %}
 {% extends "base.html" %}
 {% block title %}Login Page{% endblock %}
 
@@ -419,11 +428,13 @@ if __name__ == "__main__":
     <p><input type="submit" value = "SUBMIT">
 </form>
 {% endblock %}
+{% raw %}
 ```
 
 #### user.html 
 
 ```html
+{% raw %}
 {% extends "base.html" %}
 {% block title %}User Page{% endblock %}
 
@@ -437,6 +448,7 @@ if __name__ == "__main__":
     {% endwith %}
 <h1>Welcome {{user}}</h1>
 {% endblock %}
+{% raw %}
 ```
 
 
@@ -505,7 +517,7 @@ pip install flask-sqlalchemy
 <!DOCTYPE html>
 <html>
     <head>
-    <title>{% block content %}{% endblock %}</title>
+    <title>{% raw %}{% block content %}{% endblock %}{% endraw %}</title>
     </head>
     <body>
         <h1>WEBSITE</h1>
@@ -520,6 +532,7 @@ pip install flask-sqlalchemy
 #### user.html 
 
 ```html
+{% raw %}
 {% extends "parent.html" %}
 {% block title %}User Page{% endblock %}
 
@@ -535,6 +548,7 @@ pip install flask-sqlalchemy
     <input type ="email" name = "email" placeholder = "Enter Email" value="{{email if email}}"/>
 </form>
 {% endblock %}
+{% endraw %}
 ```
 
 
@@ -626,6 +640,7 @@ pip install flask-sqlalchemy
 ```html
 <!DOCTYPE html>
 <html>
+    {% raw %}
     <head>
     <title>{% block content %}{% endblock %}</title>
     </head>
@@ -636,12 +651,14 @@ pip install flask-sqlalchemy
             {% endblock %}
         </div>
     </body>
+    {% endraw %}
 </html>
 ```
 
 #### user.html 
 
 ```html
+{% raw %}
 {% extends "parent.html" %}
 {% block title %}User Page{% endblock %}
 
@@ -657,11 +674,13 @@ pip install flask-sqlalchemy
     <input type ="email" name = "email" placeholder = "Enter Email" value="{{email if email}}"/>
 </form>
 {% endblock %}
+{% endraw %}
 ```
 
 #### view.html 
 
 ```html
+{% raw %}
 {% extends "parent.html" %}
 {% block title %} View All Users {% endblock %}
 {% block content %}
@@ -669,6 +688,7 @@ pip install flask-sqlalchemy
         <p>Name : {{item.name}} , Email : {{item.email}}</p>
     {% endfor %}
 {% endblock %}
+{% endraw %}
 ```
 
 
@@ -777,7 +797,7 @@ Note : Bootstrap link is to be above the css link.
 ```html
 <html>
     <head>
-        <title>{% block title %} {% endblock %}</title>
+        <title>{% raw %}{% block title %} {% endblock %}{% endraw %}</title>
         <link rel="stylesheet" type = "text/css" href="{{url_for('static', filename='style.css')}}">
     </head>
     <body>
@@ -790,6 +810,7 @@ Note : Bootstrap link is to be above the css link.
 #### home.html 
 
 ```html
+{% raw %}
 {% extends 'base.html'%}
 {% block title %}
 Home Page
@@ -798,6 +819,7 @@ Home Page
 <h1> Home </h1>
 <image src="{{url_for('static', filename='image.jpeg')}}">
 {% endblock %}
+{% endraw %}
 ```
 
 To be saved in \"base_dir/static/styles/style.css\"
