@@ -227,7 +227,11 @@ out an uniform sense of page.
 <!DOCTYPE html>
 <html>
     <head>
-    <title>{% block content %}{% endblock %}</title>
+    <title>
+        {% raw %}
+        {% block content %}{% endblock %}
+        {% endraw %}
+    </title>
     </head>
     <body>
         <h1>WEBSITE</h1>
@@ -244,11 +248,13 @@ put content in the same positions as in the parent block.
 #### child.html 
 
 ```html
+{% raw %}
 {% extends "parent.html" %}
 {% block content %}Home Page{% endblock %}
 {% block content %}
 <h1> Test </h1>
 {% endblock %}
+{% endraw %}
 ```
 
 
