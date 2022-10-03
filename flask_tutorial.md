@@ -1,37 +1,11 @@
 ---
-jupyter:
-  kernelspec:
-    display_name: Python 3.10.7 64-bit (microsoft store)
-    language: python
-    name: python3
-  language_info:
-    codemirror_mode:
-      name: ipython
-      version: 3
-    file_extension: .py
-    mimetype: text/x-python
-    name: python
-    nbconvert_exporter: python
-    pygments_lexer: ipython3
-    version: 3.10.7
-  nbformat: 4
-  nbformat_minor: 2
-  orig_nbformat: 4
-  vscode:
-    interpreter:
-      hash: f1e60438be99f3f7920a16f53f5e4171a8d9d8d795881951e5dd5fe0b923b7da
+
 ---
-
-::: {.cell .markdown}
 # Flask Tutorial
-:::
 
-::: {.cell .markdown}
 ### Basic Flask App
-:::
 
-::: {.cell .code}
-``` {.python}
+```python
 # Flask print basic variable.
 
 from flask import Flask # Import Flask
@@ -59,21 +33,21 @@ def user(name): # This stored variable name is used in this function.
 if __name__ == "__main__": # Run the app using condition.
     app.run()  
 ```
-:::
 
-::: {.cell .markdown}
+
+
 ### Redirect
 
 Lets demonstrate the redirect function. Used to redirect user to another
 page upon function execution.
 
-``` {.python}
+```python
 return redirect(url_for("user" , name = "ADMIN"))
 ```
-:::
 
-::: {.cell .code}
-``` {.python}
+
+
+```python
 # REDIRECT #
 
 from flask import Flask , redirect, url_for # Import Flask , redirect and url_for
@@ -97,23 +71,23 @@ def admin():
 if __name__ == "__main__": # Run the app using condition.
     app.run()  
 ```
-:::
 
-::: {.cell .markdown}
+
+
 ## HTML TEMPLATES
 
-#### flask.py {#flaskpy}
+#### flask.py 
 
-``` {.python}
+```python
 def home(name):
     return render_template("index.html" , content=name) 
 ```
 
 The content variable will be used in the html code below.
 
-#### index.html {#indexhtml}
+#### index.html 
 
-``` {.html}
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -125,10 +99,10 @@ The content variable will be used in the html code below.
     </body>
 </html>
 ```
-:::
 
-::: {.cell .code}
-``` {.python}
+
+
+```python
 # HTML TEMPLATES #
 
 # Start by creating a specific directory called "templates" inside the base directory.
@@ -147,14 +121,14 @@ def home(name):
 if __name__ == "__main__": # Run the app using condition.
     app.run()  
 ```
-:::
 
-::: {.cell .markdown}
+
+
 ### You can write python code in the html files
 
-#### example_loop_static.html {#example_loop_statichtml}
+#### example_loop_static.html
 
-``` {.html}
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -171,9 +145,9 @@ if __name__ == "__main__": # Run the app using condition.
 
 This will print hello 10 times
 
-#### example_loop_variable.html {#example_loop_variablehtml}
+#### example_loop_variable.html 
 
-``` {.html}
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -190,16 +164,16 @@ This will print hello 10 times
 
 This will print the values 1 to 10
 
-#### flask.py {#flaskpy}
+#### flask.py 
 
-``` {.python}
+```python
 def home(name):
     return render_template("index.html" , list=["1","2","3","4"]) 
 ```
 
-#### example_loop_list.html {#example_loop_listhtml}
+#### example_loop_list.html 
 
-``` {.html}
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -216,9 +190,9 @@ def home(name):
 
 This will print the values the values in the list
 
-#### example_condition.html {#example_conditionhtml}
+#### example_condition.html 
 
-``` {.html}
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -239,9 +213,9 @@ This will print the values the values in the list
     </body>
 </html>
 ```
-:::
 
-::: {.cell .markdown}
+
+
 ## TEMPLATE INHERITANCE
 
 ### Parent
@@ -249,9 +223,9 @@ This will print the values the values in the list
 The parent html is used as a template for the child templates to give
 out an uniform sense of page.
 
-#### parent.html {#parenthtml}
+#### parent.html 
 
-``` {.html}
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -269,19 +243,19 @@ The child html inherits the template from the parent html and uses the
 same layout for displaying everything. The content blocks are used to
 put content in the same positions as in the parent block.
 
-#### child.html {#childhtml}
+#### child.html 
 
-``` {.html}
+```html
 {% extends "parent.html" %}
 {% block content %}Home Page{% endblock %}
 {% block content %}
 <h1> Test </h1>
 {% endblock %}
 ```
-:::
 
-::: {.cell .code}
-``` {.python}
+
+
+```python
 # TEMPLATE INHERITANCE #
 from flask import Flask , redirect, url_for , render_template # Import Flask , redirect and url_for
 
@@ -303,14 +277,14 @@ def redirect(page):
 if __name__ == "__main__": 
     app.run(debug=True)  # Activate debugger while running
 ```
-:::
 
-::: {.cell .markdown}
+
+
 ## HTTP Methods (GET/POST)
 
-#### login.html {#loginhtml}
+#### login.html 
 
-``` {.html}
+```html
 {% extends "base.html" %}
 {% block title %}Login Page{% endblock %}
 
@@ -322,10 +296,10 @@ if __name__ == "__main__":
 </form>
 {% endblock %}
 ```
-:::
 
-::: {.cell .code}
-``` {.python}
+
+
+```python
 from flask import Flask , redirect , url_for , render_template , request
 
 app = Flask(__name__)
@@ -349,14 +323,14 @@ def user(usr):
 if __name__ == "__main__":
     app.run(debug=True)
 ```
-:::
 
-::: {.cell .markdown}
+
+
 # Sessions
 
-#### login.html {#loginhtml}
+#### login.html 
 
-``` {.html}
+```html
 {% extends "base.html" %}
 {% block title %}Login Page{% endblock %}
 
@@ -368,10 +342,10 @@ if __name__ == "__main__":
 </form>
 {% endblock %}
 ```
-:::
 
-::: {.cell .code}
-``` {.python}
+
+
+```python
 # SESSIONS 
 
 from flask import Flask , redirect , url_for , render_template , request , session
@@ -415,14 +389,14 @@ def logout():
 if __name__ == "__main__":
     app.run(debug=True)
 ```
-:::
 
-::: {.cell .markdown}
+
+
 ## Message Flashing
 
-#### login.html {#loginhtml}
+#### login.html 
 
-``` {.html}
+```html
 {% extends "base.html" %}
 {% block title %}Login Page{% endblock %}
 
@@ -443,9 +417,9 @@ if __name__ == "__main__":
 {% endblock %}
 ```
 
-#### user.html {#userhtml}
+#### user.html 
 
-``` {.html}
+```html
 {% extends "base.html" %}
 {% block title %}User Page{% endblock %}
 
@@ -460,10 +434,10 @@ if __name__ == "__main__":
 <h1>Welcome {{user}}</h1>
 {% endblock %}
 ```
-:::
 
-::: {.cell .code}
-``` {.python}
+
+
+```python
 # Message Flashing
 
 from flask import Flask , redirect , url_for , render_template , request , session , flash
@@ -511,19 +485,19 @@ def logout():
 if __name__ == "__main__":
     app.run(debug=True)
 ```
-:::
 
-::: {.cell .markdown}
+
+
 ## SQLAlchemy
 
-``` {.python}
+```python
 # To install SqlAlchemy
 pip install flask-sqlalchemy
 ```
 
-#### parent.html {#parenthtml}
+#### parent.html 
 
-``` {.html}
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -539,9 +513,9 @@ pip install flask-sqlalchemy
 </html>
 ```
 
-#### user.html {#userhtml}
+#### user.html 
 
-``` {.html}
+```html
 {% extends "parent.html" %}
 {% block title %}User Page{% endblock %}
 
@@ -558,10 +532,10 @@ pip install flask-sqlalchemy
 </form>
 {% endblock %}
 ```
-:::
 
-::: {.cell .code}
-``` {.python}
+
+
+```python
 # SQLAlchemy
 
 from flask import Flask , redirect , url_for , render_template , request , session , flash
@@ -633,21 +607,19 @@ if __name__ == "__main__":
     db.create_all() # Create Database
     app.run(debug=True)
 ```
-:::
 
-::: {.cell .markdown}
-# Adding, Deleting & Updating Users {#adding-deleting--updating-users}
 
-## SQLAlchemy {#sqlalchemy}
 
-``` {.python}
+# Adding, Deleting & Updating Users 
+## SQLAlchemy 
+```python
 # To install SqlAlchemy
 pip install flask-sqlalchemy
 ```
 
-#### parent.html {#parenthtml}
+#### parent.html 
 
-``` {.html}
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -663,9 +635,9 @@ pip install flask-sqlalchemy
 </html>
 ```
 
-#### user.html {#userhtml}
+#### user.html 
 
-``` {.html}
+```html
 {% extends "parent.html" %}
 {% block title %}User Page{% endblock %}
 
@@ -683,9 +655,9 @@ pip install flask-sqlalchemy
 {% endblock %}
 ```
 
-#### view.html {#viewhtml}
+#### view.html 
 
-``` {.html}
+```html
 {% extends "parent.html" %}
 {% block title %} View All Users {% endblock %}
 {% block content %}
@@ -694,10 +666,10 @@ pip install flask-sqlalchemy
     {% endfor %}
 {% endblock %}
 ```
-:::
 
-::: {.cell .code}
-``` {.python}
+
+
+```python
 # SQLAlchemy Advanced
 
 from flask import Flask , redirect , url_for , render_template , request , session , flash
@@ -790,16 +762,15 @@ if __name__ == "__main__":
     db.create_all() # Create Database
     app.run(debug=True)
 ```
-:::
 
-::: {.cell .markdown}
+
+
 # Static Files
 
 Note : Bootstrap link is to be above the css link.
 
-#### base.html {#basehtml}
-
-``` {.html}
+#### base.html 
+```html
 <html>
     <head>
         <title>{% block title %} {% endblock %}</title>
@@ -812,9 +783,9 @@ Note : Bootstrap link is to be above the css link.
 </html>
 ```
 
-#### home.html {#homehtml}
+#### home.html 
 
-``` {.html}
+```html
 {% extends 'base.html'%}
 {% block title %}
 Home Page
@@ -827,15 +798,15 @@ Home Page
 
 To be saved in \"base_dir/static/styles/style.css\"
 
-#### style.css {#stylecss}
+#### style.css
 
 ``` {.css}
 body {color:#fffa;}
 ```
-:::
 
-::: {.cell .code}
-``` {.python}
+
+
+```python
 from flask import Flask , render_template
 
 app = Flask(__name__)
@@ -848,14 +819,14 @@ def home():
 if __name__ == "__main__":
     app.run(debug=True)
 ```
-:::
 
-::: {.cell .markdown}
+
+
 # Blue Prints
-:::
 
-::: {.cell .code}
-``` {.python}
+
+
+```python
 # main.py
 
 from flask import Flask , render_template
@@ -871,10 +842,10 @@ def test():
 if __name__ == "__main__":
     app.run(debug=True)
 ```
-:::
 
-::: {.cell .code}
-``` {.python}
+
+
+```python
 # second.py
 
 from flask import Flask , render_template
@@ -890,4 +861,4 @@ def home():
 def test():
     return "<h1>Test_2b</h1>"
 ```
-:::
+
