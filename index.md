@@ -4,4 +4,6 @@
 
 [Flask Tutorial](flask_tutorial.md)
 
-[Example Page](example.md)
+## BIOINFORMATICS GUIDES
+
+[Conversion of Gene IDs to Gene Symbols using R](R_Conversion_GeneSymbols.md)
