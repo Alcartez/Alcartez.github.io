@@ -37,7 +37,7 @@ IDs <- c('3815', '3816', '2341')
 Now just rip the bandage off and write a line of code.
 
 ```r
-getSYMBOL(c('3815', '3816', '2341'), data='org.Hs.eg')
+getSYMBOL(IDs, data='org.Hs.eg')
 ```
 
 This script can be used with ENSEMBL as well.
