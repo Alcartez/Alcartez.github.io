@@ -1,4 +1,4 @@
 # Coding Tutorials
 
-* [Flask Tutorial](Coding_Tutorials\Flask_Tutorial\index.md)
+* [Flask Tutorial](Flask_Tutorial\index.md)
 
