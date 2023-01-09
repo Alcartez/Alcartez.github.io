@@ -2,18 +2,15 @@
 
 [Home](https://alcartez.github.io)
 
-[Flask Tutorial](flask_tutorial.md)
+## BIOINFORMATICS GUIDE
 
-## BIOINFORMATICS GUIDES
+[Bioinformatics Guides](Bioinformatics_Guides/index.md)
 
-[Bioinformatics Guide](Bioinformatics_Guides/index.md)
+## CODING TUTORIALS
 
-[Conversion of Gene IDs to Gene Symbols using R](R_Conversion_GeneSymbols.md)
+[Coding Tutorials](Coding_Tutorials\index.md)
 
-[Find Common Gene Symbols using R](R_Find_CommonGenes.md)
 
-[A comprehensional guide to ncRNAs from a Bioinformatics approach](ncRNA_Guide.md)
 
-[A comprehensional guide to ncRNAs from a Bioinformatics approach _ Again](Bioinformatics_Guides\ncRNA_Guide.md)
 
 
