@@ -8,7 +8,7 @@
 
 ## CODING TUTORIALS
 
-[Coding Tutorials](Coding_Tutorials\index.md)
+[Coding Tutorials](Coding_Tutorials/index.md)
 
 
 
