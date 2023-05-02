@@ -19,7 +19,7 @@
 * [Flask Tutorial](Coding_Tutorials/Flask_Tutorial/index.md)
 
 
-[Discussion](Discussion.md)
+
 
 
 
